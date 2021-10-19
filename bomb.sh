@@ -96,7 +96,7 @@ PROGRAM() {
 
 #<<-----check server----->>>
 rm -rf .server.txt
-server=$(wget -L https://raw.githubusercontent.com/Drexploit02/test/main/.server.txt > /dev/null 2>&1)
+server=$(wget -L https://raw.githubusercontent.com/BHUTUU/test/main/.server.txt > /dev/null 2>&1)
 serverup="on"
 server=$(cat .server.txt | grep on)
 if [[ $server = $serverup ]]; then
