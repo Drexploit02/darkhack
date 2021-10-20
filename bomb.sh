@@ -6,7 +6,12 @@
 args="$@"
 comand="bomb.sh ${args}"
 CWD=$(pwd)
-
+exit_on_signal_SIGINT () {
+    echo -e "${S1} [✗] Received INTR call - Exiting...${R0}" # credit to cyberknight777
+    rm -rf headapis* tailapis* anonapi* > /dev/null 2>&1
+    exit 0
+}
+trap exit_on_signal_SIGINT SIGINT
 #<<<----------color codes substitution by variables--------->>>
 S0="\033[1;30m" B0="\033[40m" SI0="\033[30m"
 S1="\033[1;31m" B1="\033[41m" SI1="\033[30m"
